@@ -1,2 +1,2 @@
-# ML_Template
-This repository is to be used to start any machine learning/Deep Learning problem
+# Breast Cancer Classification
+* applying machine learning to the scikit-learn breast cancer dataset
