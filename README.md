@@ -1,5 +1,5 @@
 # Breast Cancer Classification
-##Case Study
+## Case Study
 A key challenge in cancer detection is how to classify a tumor as malignant or benign.
 By using machine learning we are able to predict if a tumor is malignant or benign
 based on several observations/key features. for this case study the data set is compromised
