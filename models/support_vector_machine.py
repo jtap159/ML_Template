@@ -26,11 +26,13 @@ classifier = SVC(kernel='linear', random_state=0)
 classifier.fit(X_train, y_train)
 
 # Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 y_pred = classifier.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
 print(accuracy_score(y_test, y_pred))
+
+print(classification_report(y_test, y_pred))
 
 # Applying k-Fold Cross Validation
 from sklearn.model_selection import cross_val_score
