@@ -3,9 +3,9 @@ import numpy as np # Import Numpy for data statistical analysis
 import matplotlib.pyplot as plt # Import matplotlib for data visualisation
 import seaborn as sns # Statistical data visualization
 from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
-from sklearn.preprocessing import normalize
+from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
 
 
 # Support Vector Machine (SVM)
@@ -30,17 +30,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 # Feature Scaling
 # from sklearn.preprocessing import StandardScaler
-# sc = StandardScaler()
-# X_train = sc.fit_transform(X_train)
-# X_test = sc.transform(X_test)
-
-# Feature Scaling
-X_train = normalize(X_train, axis=0, norm='max')
-X_test = normalize(X_test, axis=0, norm='max')
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
 
 # Training the SVM model on the Training set
-classifier = SVC(kernel='linear', random_state=0)
-classifier.fit(X_train, y_train)
+classifier = SVC()
 
 # Applying Grid Search to find the best model and the best parameters
 parameters = [{'C': [0.25, 0.5, 0.75, 1], 'kernel': ['linear']},
@@ -53,11 +48,15 @@ grid_search = GridSearchCV(estimator=classifier,
 grid_search.fit(X_train, y_train)
 best_parameters = grid_search.best_params_
 grid_predict = grid_search.predict(X_test)
-cm = confusion_matrix(y_test, grid_predict)
+cm = confusion_matrix(y_test, grid_predict, labels=grid_search.classes_)
 print("Best Parameters:", best_parameters)
 print(cm)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=grid_search.classes_)
+disp.plot()
 
 # Applying k-Fold Cross Validation to grid search best estimator
 accuracies = cross_val_score(estimator=grid_search.best_estimator_, X=X_train, y=y_train, cv=10)
 print("Accuracy: {:.2f} %".format(accuracies.mean()*100))
 print("Standard Deviation: {:.2f} %".format(accuracies.std()*100))
+
+print(classification_report(y_test, grid_predict))
