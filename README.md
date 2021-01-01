@@ -53,8 +53,8 @@ Confusion Matrix: <br />
 K-Fold Cross Validation: <br />
 Accuracy: 98.13 % <br />
 Standard Deviation: 2.52 % <br />
-Recall: 94% for Malignant detection
-Percision: 94% for Malignant detection
+Recall: 94% for Malignant detection <br />
+Percision: 94% for Malignant detection 
 
 **SVM with Grid Search Results:** <br />
 Best Parameters: <br />
@@ -64,17 +64,15 @@ Confusion Matrix: <br />
 K-Fold Cross Validation <br />
 Accuracy: 98.25 % <br />
 Standard Deviation: 1.91 % <br />
-Recall: 96% for Malignant detection
+Recall: 96% for Malignant detection <br />
 Percision: 98% for Malignant detection
 
-Comparing the two models the best choice would be SVM because we have 0 false negatives
-and only 2 false positives. while for logistical regression we have 3 false negatives
-and 3 false positive. Even though the logistical regression accuracy is better than SVM,
-for predicting if a cancer tumor is malignant or benign it would
-be better to have a false positive rather than a false negative. It is better
-to think a tumor is malignant and do more tests on the tumor rather than think it is
+Comparing the two models the best choice would be SVM because we have a recall of 96% compared to a 
+recall of 94% for logistical regression. In this case we want a high recall because it indicates that we had less
+type II errors. The type II error would mean we are predicting a tumor is Benign when it is really Malignant.
+type I errors are better than type II errors in this case and we want to minimize the type II errors.
+It is better to predict a tumor is malignant and do more tests on the tumor rather than think it is
 benign and do nothing. So, the best model in this case would be SVM.
-
 
 
 
