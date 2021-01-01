@@ -54,7 +54,7 @@ K-Fold Cross Validation: <br />
 Accuracy: 98.13 % <br />
 Standard Deviation: 2.52 % <br />
 Recall: 94% for Malignant detection <br />
-Percision: 94% for Malignant detection 
+Precision: 94% for Malignant detection 
 
 **SVM with Grid Search Results:** <br />
 Best Parameters: <br />
@@ -65,7 +65,7 @@ K-Fold Cross Validation <br />
 Accuracy: 98.25 % <br />
 Standard Deviation: 1.91 % <br />
 Recall: 96% for Malignant detection <br />
-Percision: 98% for Malignant detection
+Precision: 98% for Malignant detection
 
 Comparing the two models the best choice would be SVM because we have a recall of 96% compared to a 
 recall of 94% for logistical regression. In this case we want a high recall because it indicates that we had less
