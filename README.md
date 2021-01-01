@@ -49,7 +49,7 @@ After testing all the above classifications models it was narrowed down
 to logistical regression and SVM. <br />
 **Logistical Regression Results:** <br />
 Confusion Matrix: <br />
-<img src="images/logistical_regression_confusion_matrix.png"> <br />
+<img src="images/logistical_regression_confusion_matrix.png" width="400"> <br />
 K-Fold Cross Validation: <br />
 Accuracy: 98.13 % <br />
 Standard Deviation: 2.52 % <br />
@@ -60,7 +60,7 @@ Precision: 94% for Malignant detection
 Best Parameters: <br />
 {'C': 0.25, 'kernel': 'linear'} <br />
 Confusion Matrix: <br />
-<img src="images/svm_confusion_matrix.png"> <br />
+<img src="images/svm_confusion_matrix.png" width="400"> <br />
 K-Fold Cross Validation <br />
 Accuracy: 98.25 % <br />
 Standard Deviation: 1.91 % <br />
