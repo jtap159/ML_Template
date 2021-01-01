@@ -57,12 +57,11 @@ Standard Deviation: 2.52 % <br />
 
 **SVM with Grid Search Results:** <br />
 Best Parameters: <br />
-{'C': 0.75, 'gamma': 0.8, 'kernel': 'rbf'} <br />
-[[46  2] <br />
- [ 0 66]] <br />
+{'C': 0.25, 'kernel': 'linear'} <br />
+<img src="confusion_matrix.png"> <br />
 K-Fold Cross Validation: <br />
-Accuracy: 97.58 % <br />
-Standard Deviation: 1.83 % <br />
+Accuracy: 98.25 % <br />
+Standard Deviation: 1.91 % <br />
 
 Comparing the two models the best choice would be SVM because we have 0 false negatives
 and only 2 false positives. while for logistical regression we have 3 false negatives
