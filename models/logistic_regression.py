@@ -26,11 +26,11 @@ classifier = LogisticRegression(random_state=0)
 classifier.fit(X_train, y_train)
 
 # Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score, ConfusionMatrixDisplay, classification_report
 y_pred = classifier.predict(X_test)
-cm = confusion_matrix(y_test, y_pred)
-print("Confusion Matrix")
-print(cm)
+cm = confusion_matrix(y_test, y_pred, labels=classifier.classes_)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=classifier.classes_)
+disp.plot()
 # print(accuracy_score(y_test, y_pred))
 
 # Applying k-Fold Cross Validation
@@ -39,3 +39,4 @@ accuracies = cross_val_score(estimator=classifier, X=X_train, y=y_train, cv=10)
 print("K-Fold Cross Validation")
 print("Accuracy: {:.2f} %".format(accuracies.mean()*100))
 print("Standard Deviation: {:.2f} %".format(accuracies.std()*100))
+print(classification_report(y_test, y_pred))
