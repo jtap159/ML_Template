@@ -70,7 +70,7 @@ Percision: 98% for Malignant detection
 Comparing the two models the best choice would be SVM because we have a recall of 96% compared to a 
 recall of 94% for logistical regression. In this case we want a high recall because it indicates that we had less
 type II errors. The type II error would mean we are predicting a tumor is Benign when it is really Malignant.
-type I errors are better than type II errors in this case and we want to minimize the type II errors.
+type I errors are better than type II errors in this case, and we want to minimize the type II errors.
 It is better to predict a tumor is malignant and do more tests on the tumor rather than think it is
 benign and do nothing. So, the best model in this case would be SVM.
 
